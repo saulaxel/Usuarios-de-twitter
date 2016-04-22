@@ -14,10 +14,9 @@ while contenido.find("\n\n")>=0:
 	contenido = contenido[2]
 # Termina el while
 lista_subtextos.append(contenido)
-numTextos = len(lista_subtextos)
 
-for i in range (1,numTextos):
-	texto = lista_subtextos[i-1]
+for i in range (0, len(lista_subtextos) ):
+	texto = lista_subtextos[i]
 	while texto.find("@")>=0:
 		texto = texto.partition("@")
 		texto = texto[2].partition(" ")
@@ -31,7 +30,7 @@ for i in range (1,numTextos):
 		# Termina el if
 	# Termina el for
 	lista_final.sort()
-	print "lista "+ str(i) + " es:"
+	print "lista "+ str(i+1) + " es:"
 	print lista_final
 	lista_usuarios = []
 # Termina el for
